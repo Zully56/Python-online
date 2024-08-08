@@ -1,0 +1,19 @@
+import string
+import random
+
+
+try:
+    longitud = int(input("Ingrese el tamaño de la contraseña: "))
+    if longitud <= 0:
+        raise ValueError("La longitud debe ser un número positivo.")
+except ValueError as e:
+    print(f"Entrada inválida: {e}")
+    exit(1)
+
+caracteres = string.ascii_letters + string.digits + string.punctuation
+
+
+contrasenha = "".join(random.choice(caracteres) for i in range(longitud))
+
+
+print("La contraseña generada es: " + contrasenha)
